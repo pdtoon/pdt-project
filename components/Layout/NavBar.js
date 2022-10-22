@@ -58,18 +58,18 @@ export default function NavBar() {
 
             <div className="d-flex gap-3">
               {show ? (
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle"
+                <div className="dropdown">
+                  <button className="btn btn-secondary dropdown-toggle"
                     type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     User
                   </button>
-                  <ul class="dropdown-menu">
+                  <ul className="dropdown-menu">
                     <li>
                       <Link href="/mybooking">
-                        <a class="dropdown-item">My Booking</a>
+                        <a className="dropdown-item">My Booking</a>
                       </Link>
                     </li>
-                    <li><button class="dropdown-item" onClick={onLogOut}>Log Out</button></li>
+                    <li><button className="dropdown-item" onClick={onLogOut}>Log Out</button></li>
                   </ul>
                 </div>
               ) : (

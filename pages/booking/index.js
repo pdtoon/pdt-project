@@ -8,7 +8,7 @@ const Booking = () => {
   return (
     <>
       <main className='pt-5'>
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <h4 className="d-flex justify-content-between align-items-center mb-3">
           <span>List Meeting Room</span>
         </h4>
         <hr />
