@@ -16,6 +16,7 @@ const Login = () => {
     } else {
       router.replace("/");
     }
+    console.log(role)
   };
 
   return (

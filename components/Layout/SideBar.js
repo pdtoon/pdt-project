@@ -26,14 +26,28 @@ export default function SideBar({ children }) {
                 <li>
                   <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-speedometer2 text-white"></i>
-                    <span className="ms-1 d-none d-sm-inline text-white">Dashboard</span>
+                    <span className="ms-1 d-none d-sm-inline text-white">Meetingroom</span>
                   </a>
                 </li>
 
                 <li>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-table text-white"></i>
-                    <span className="ms-1 d-none d-sm-inline text-white">Orders</span>
+                    <span className="ms-1 d-none d-sm-inline text-white">Equipment</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" className="nav-link px-0 align-middle">
+                    <i className="fs-4 bi-people text-white"></i>
+                    <span className="ms-1 d-none d-sm-inline text-white">Add-on service</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" className="nav-link px-0 align-middle">
+                    <i className="fs-4 bi-people text-white"></i>
+                    <span className="ms-1 d-none d-sm-inline text-white">Promotion</span>
                   </a>
                 </li>
 
