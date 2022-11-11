@@ -17,6 +17,16 @@ export default function SideBar({ children }) {
 
               <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start text-white" id="menu">
 
+
+              <li>
+                <Link href="/admin/reservation/reservation" passHref>
+                  <a href="#" className="nav-link px-0 align-middle">
+                    <i className="fs-4 bi-people text-white"></i>
+                    <span className="ms-1 d-none d-sm-inline text-white">Reservation</span>
+                  </a>
+                  </Link>
+                </li>
+
                 <li className="nav-item">
                 <Link href="/admin" passHref>
                   <a href="#" className="nav-link align-middle px-0">
@@ -35,31 +45,40 @@ export default function SideBar({ children }) {
                 </li>
 
                 <li>
+                <Link href="/admin/equipment/equipment" passHref>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-table text-white"></i>
                     <span className="ms-1 d-none d-sm-inline text-white">Equipment</span>
                   </a>
+                  </Link>
+
                 </li>
 
                 <li>
+                <Link href="/admin/addonservice/addonservice" passHref>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-people text-white"></i>
                     <span className="ms-1 d-none d-sm-inline text-white">Add-on service</span>
                   </a>
+                  </Link>
                 </li>
 
                 <li>
+                <Link href="/admin/promotion/promotion" passHref>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-people text-white"></i>
                     <span className="ms-1 d-none d-sm-inline text-white">Promotion</span>
                   </a>
+                  </Link>
                 </li>
 
                 <li>
+                <Link href="/admin/customer/customer" passHref>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-people text-white"></i>
                     <span className="ms-1 d-none d-sm-inline text-white">Customers</span>
                   </a>
+                  </Link>
                 </li>
 
                 <hr className="dropdown-divider text-white" />
