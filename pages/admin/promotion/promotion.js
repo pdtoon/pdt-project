@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Router from 'next/router'
+import Link from 'next/link'
 
 const Promotion = () => {
     const [alldata, setAlldata] = useState([])
@@ -19,6 +20,10 @@ const Promotion = () => {
             price: price,
             code: code,
         }).then((res) => Router.reload(window.location.pathname))
+    }
+
+    const delData = (id) =>{
+        axios.delete("http://localhost:4000/promotion/" +id).then((res) => Router.reload(window.location.pathname))
     }
 
     return (
@@ -56,12 +61,17 @@ const Promotion = () => {
                 <tbody>
 
                     {alldata.map((v) => (
-                        <tr>
+                        <tr key={v.id}>
                             <th scope="row">{v.id}</th>
                             <td>{v.name}</td>
                             <td>{v.price}</td>
                             <td>{v.code}</td>
-                            <td></td>
+                            <td>
+                            <Link href={"/admin/promotion/" + v.id} passHref>
+                                <a className='btn btn-warning'>edit</a>
+                                </Link>
+                                <button class="btn btn-danger" onClick={() => delData(v.id)}>delete</button>
+                            </td>
                         </tr>
                     ))}
 

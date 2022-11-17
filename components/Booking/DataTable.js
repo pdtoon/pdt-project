@@ -11,9 +11,6 @@ export default function DataTable({ data = [] }) {
   const tableName = "table1"
   const [show, setShow] = useState(true)
 
-  const handleClick = () => {
-    router.replace("/booking/" + 1)
-  }
 
   useEffect(() => {
     const options = { responsive: true }
@@ -31,6 +28,11 @@ export default function DataTable({ data = [] }) {
     } else {
       setShow(false)
     }
+    console.log(data)
+  }
+
+  const handleClick = (id) => {
+    router.replace("/booking/" + id)
   }
 
   return (
@@ -47,29 +49,35 @@ export default function DataTable({ data = [] }) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td width={300}>
-              <Image
-                src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80"
-                className="d-block w-100 rounded"
-                alt="meeting_img1"
-                width={300}
-                height={200}
-                objectFit="cover"
-              />
-            </td>
-            <td>Mark</td>
-            <td>10</td>
-            <td>@mdo</td>
-            <td>1500</td>
-            <td>
-              {show ? (
-                <button type='buttom' className='btn btn-primary' onClick={handleClick}>Book</button>
-              ) : (
-                <span>please log in !</span>
-              )}
-            </td>
-          </tr>
+
+
+
+        {data.map((v) => (
+                         <tr>
+                         <td width={300}>
+                           <Image
+                             src={!v.Image && "https://images.unsplash.com/photo-1660901714052-ba6957feba6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"}
+                             className="d-block w-100 rounded"
+                             alt="meeting_img1"
+                             width={300}
+                             height={200}
+                             objectFit="cover"
+                           />
+                         </td>
+                         <td>{v.name}</td>
+                         <td>{v.support}</td>
+                         <td>{v.detail}</td>
+                         <td>{v.price}</td>
+                         <td>
+                           {show ? (
+                             <button type='buttom' className='btn btn-primary' onClick={()=>handleClick(v.id)}>Book</button>
+                           ) : (
+                             <span>please log in !</span>
+                           )}
+                         </td>
+                       </tr>
+                    ))}
+
         </tbody>
         <tfoot>
           <tr>

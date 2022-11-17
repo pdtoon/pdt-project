@@ -8,11 +8,11 @@ const Login = () => {
   const router = useRouter();
 
   const onLogin = () => {
-    let role = "admin";
+    let role = "user";
     Cookies.set("role", role);
 
-    if (role == "admin") {
-      router.replace("/admin");
+    if (role == "user") {
+      router.replace("/user");
     } else {
       router.replace("/");
     }
